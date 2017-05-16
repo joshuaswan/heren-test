@@ -1,0 +1,24 @@
+database:
+    driver: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.1.130:1521:test
+    user: herendh
+    password: herendh
+    properties:
+        hibernate.c3p0.max_size: 5
+        hibernate.c3p0.min_size: 1
+        hibernate.c3p0.timeout: 600
+        hibernate.c3p0.max_statements: 100
+        hibernate.c3p0.acquire_increment: 5
+        hibernate.c3p0.idle_test_period: 60
+        hibernate.show_sql: true
+    migration:
+        auto: true
+http:
+    port: 9090
+logging:
+    level: INFO
+    loggers:
+        org.hibernate.SQL: DEBUG
+        org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    console:
+        level: ALL
